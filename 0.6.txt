@@ -1,0 +1,13 @@
+agregar nota SPA
+---
+sequenceDiagram
+    participant user
+    participant browser
+    participant server
+
+    user->>browser: Write in textbox: "Hello"
+    user->>browser: Click button "save"
+    browser->>server: POST https://studies.cs.helsinki.fi/exampleapp/new_note { content: "hello", date: "2025-07-10T16:12:59.623Z" }
+	server->>browser: 301 Created
+	
+	Note right of browser: The browser render the new note in the list
